@@ -1,0 +1,13 @@
+// dowhile-nested.calc
+var i: integer;
+var j: integer;
+i := 1;
+do
+    j := 1;
+    do
+        print(i);
+        print(j);
+        j := j+1;
+    while j<4;
+    i := i+1;
+while i<4;
