@@ -1,0 +1,45 @@
+
+ repeat C until E
+ 
+ Do-While in Triangle toevoegen...
+ 
+ 1. repeat en until als keyword toevoegen. Command kan nu ook naar RepeatUntilCommand gaan. 
+ 2. E is een expressie van type Boolean, C is een command, variabelen en constanten die binnen C gedefinieerd worden, 
+	zijn enkel binnen C zichtbaar. Variabelen en constanten die binnen C gedefinieerd worden, kunnen ook niet in E gebruikt worden.
+ 3. Het repeat-until-commando wordt als volgt uitgevoerd. Eerst wordt het commando C
+	uitgevoerd, waarna de expressie E wordt ge¨evalueerd. Als de waarde van de expressie E
+	gelijk is aan true, wordt de iteratie be¨eindigd, anders wordt de lus weer uitgevoerd. De iteratie
+	blijft net zolang doorgaan totdat E de waarde true oplevert. Merk op dat het commando
+	C tenminste ´e´en keer uitgevoerd wordt. Het type van E moet Boolean zijn.
+
+ Verder stappenplan wijst zich eigenlijk vanzelf
+ Uitvoeren van het programma met een stuk voorbeeldcode produceert obj.tam in eclipse_workspace/Vertalerbouw/
+ java TAM.Interpreter obj.tam draait het programma
+	
+	
+	
+ 
+ case-commando
+ 
+ case E of
+	IL1 : C1;
+	IL2 : C2;
+	...
+	ILm : Cm;
+ else: C0;
+ 
+ 1. case als keyword toevoegen. Command kan nu ook naar CaseCommand gaan
+ 2. E is een expressie van type Integer Literal, Cx is een Command. Variabelen en constanten die binnen een Cx worden
+	gedefinieerd, zijn enkel binnen Cx zichtbaar. IL is een Integer Literal. ILx moet een unieke waarde hebben:
+	het is niet toegestaan dat er meerdere cases zijn met dezelfde IntegerLiteral als case identifier
+ 3. Het case-Command ‘case Expression of Cases else Command’ wordt als volgt geëvalueerd. 
+	De Expression wordt geëvalueerd; de uitkomst hiervan noemen we v. Vervolgens wordt voor de eerste, 
+	verplichte, single-Case de waarde van de Integer-Literal geëvalueerd; de uitkomst hiervan noemen we w. 
+	Vervolgens wordt de vergelijking w == v uitgevoerd, die een waarheidswaarde t oplevert. 
+	Als t gelijk is aan True, dan wordt het bijbehorende Command van de single-Case uitgevoerd en 
+	wordt het case-Command verlaten. Als t gelijk is aan False zullen de eventuele opvolgende 
+	Integer-Literals van de single-Cases geëvalueerd worden in de waarde w, waarvoor bovenstaande 
+	opnieuw wordt uitgevoerd. Dan en slechts dan als geen enkele vergelijking w == v de waarheidswaarde True 
+	oplevert, zal het Command dat na else: gedefinieerd wordt, uitgevoerd worden.
+	
+	

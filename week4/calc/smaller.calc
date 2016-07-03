@@ -1,0 +1,7 @@
+var i: integer;
+var j: integer;
+var x: integer;
+i := 3;
+j := 4;
+x := i > j;
+print(x);

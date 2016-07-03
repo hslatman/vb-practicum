@@ -1,0 +1,82 @@
+let
+
+	var nWords: Integer;
+	var nChars: Integer;
+	var nLines: Integer;
+	
+	var inWhiteSpace: Boolean;
+
+	type Line ~
+		record
+			length: Integer,
+			content: array 80 of Char
+		end;
+	
+	proc getline(var l: Line) ~
+			begin
+			l.length:= 0;
+			while \eol() do
+				begin
+				get(var l.content[l.length]);
+				l.length := l.length + 1
+				end;
+			!geteol()
+			end;
+	
+	proc putline(l: Line) ~
+			let var i : Integer
+			in
+				begin
+				i := 0;
+				while i < l.length do
+					begin
+					put(l.content[i]);
+					i := i + 1;
+				end;
+			puteol()
+			end;
+			
+	proc countline(l: Line) ~
+			let var i : Integer
+			in begin
+				nLines := nLines + 1;
+				nChars := nChars + l.length - 1;
+				i := 0;
+				while i < l.length do begin
+					if (l.content[i] = ' ') then
+						inWhiteSpace := true
+					else 
+						
+						if (inWhiteSpace) then
+							begin
+							nWords := nWords + 1;
+							inWhiteSpace := false
+							end
+						else;
+						
+					i := i + 1;
+				end;		
+			end;
+	
+	var currentline: Line
+
+in
+	begin
+	
+		nWords := 1;
+		nChars := 0;
+		nLines := 0;
+		
+		inWhiteSpace := false;
+		
+		getline(var currentline);
+		countline(currentline);
+		putint(nLines);
+		puteol();
+		putint(nWords);
+		puteol();
+		putint(nChars);
+		puteol();
+		putline(currentline);
+	
+	end	
